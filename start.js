@@ -31,24 +31,30 @@ async function index(ctx) {
 }
 
 async function a1(ctx) {
-	let code = ctx.cookies.get('ac');
+	let assocCode = ctx.cookies.get('ac');
 	let pairingCode;
 	let paid = false;
-	if (!code) {
-		pairingCode = '' + getCode();
+	let code = 0;
+	let step;
+	if (!assocCode) {
+		code = getCode();
+		pairingCode = '' + code;
 	} else {
-		paid = await getIsPaid(code);
+		paid = await getIsPaid(assocCode);
 	}
 	let b = '';
-	if (code && paid) {
+	if (assocCode && paid) {
+		step = 'final';
 		b = '<br>secret body 1';
 	} else if (code && !paid) {
+		step = 'paid';
 		let dataURL = await QRCode.toDataURL("article 1");
 		b = '<br>Please pay for the article. <br>Address: ADDRESS<br>Amount: 1000<br><img src="' + dataURL + '">';
 	} else {
+		step = 'login';
 		b = '<br>Please login using this pairing code: ' + pairingCode;
 	}
-	await ctx.render('article', {title: 'article 1 - my blog', b});
+	await ctx.render('article', {title: 'article 1 - my blog', b, code, step});
 }
 
 async function a2(ctx) {
