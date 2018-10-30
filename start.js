@@ -46,7 +46,7 @@ async function a1(ctx) {
 	if (assocCode && paid) {
 		step = 'final';
 		b = '<br>secret body 1';
-	} else if (code && !paid) {
+	} else if (assocCode && !paid) {
 		step = 'paid';
 		let dataURL = await QRCode.toDataURL("article 1");
 		b = '<br>Please pay for the article. <br>Address: ADDRESS<br>Amount: 1000<br><img src="' + dataURL + '">';
@@ -88,7 +88,7 @@ eventBus.once('headless_wallet_ready', () => {
 	eventBus.on('text', (from_address, text) => {
 	
 	});
-
+	
 });
 
 eventBus.on('new_my_transactions', (arrUnits) => {
@@ -98,7 +98,6 @@ eventBus.on('new_my_transactions', (arrUnits) => {
 eventBus.on('my_transactions_became_stable', (arrUnits) => {
 
 });
-
 
 
 process.on('unhandledRejection', up => { throw up; });
