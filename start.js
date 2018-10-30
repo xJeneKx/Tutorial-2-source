@@ -40,7 +40,7 @@ async function a1(ctx) {
 		code = getCode();
 		pairingCode = '' + code;
 	} else {
-		paid = await getIsPaid(assocCode);
+		paid = await isPaid(assocCode);
 	}
 	let b = '';
 	if (assocCode && paid) {
@@ -67,7 +67,7 @@ function getCode() {
 	return code;
 }
 
-async function getIsPaid(code) {
+async function isPaid(code) {
 	return false;
 }
 
