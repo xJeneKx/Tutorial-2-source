@@ -7,8 +7,8 @@
 	"author": "tony",
 	"license": "MIT",
 	"dependencies": {
-		"byteballcore": "git+https://github.com/byteball/ocore.git",
-		"headless-byteball": "git+https://github.com/byteball/headless-byteball.git",
+		"ocore": "git+https://github.com/byteball/ocore.git",
+		"headless-obyte": "git+https://github.com/byteball/headless-obyte.git",
 		"koa": "2.6.1",
 		"koa-body": "4.0.4",
 		"koa-ejs": "4.1.2",

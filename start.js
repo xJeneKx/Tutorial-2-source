@@ -12,7 +12,7 @@ const conf = require('ocore/conf');
 const db = require('ocore/db');
 const eventBus = require('ocore/event_bus');
 const validationUtils = require('ocore/validation_utils');
-const headlessWallet = require('headless-byteball');
+const headlessWallet = require('headless-obyte');
 
 app.use(koaBody());
 render(app, {
