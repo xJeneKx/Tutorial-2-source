@@ -7,11 +7,11 @@ const serve = require('koa-static');
 const render = require('koa-ejs');
 const koaBody = require('koa-body');
 const QRCode = require('qrcode');
-const constants = require('byteballcore/constants.js');
-const conf = require('byteballcore/conf');
-const db = require('byteballcore/db');
-const eventBus = require('byteballcore/event_bus');
-const validationUtils = require('byteballcore/validation_utils');
+const constants = require('ocore/constants.js');
+const conf = require('ocore/conf');
+const db = require('ocore/db');
+const eventBus = require('ocore/event_bus');
+const validationUtils = require('ocore/validation_utils');
 const headlessWallet = require('headless-byteball');
 
 app.use(koaBody());
