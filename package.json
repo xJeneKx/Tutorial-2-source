@@ -9,7 +9,7 @@
 	"dependencies": {
 		"ocore": "git+https://github.com/byteball/ocore.git",
 		"headless-obyte": "git+https://github.com/byteball/headless-obyte.git",
-		"koa": "2.6.1",
+		"koa": "2.15.4",
 		"koa-body": "4.0.4",
 		"koa-ejs": "4.1.2",
 		"koa-mount": "4.0.0",
